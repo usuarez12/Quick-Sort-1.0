@@ -7,8 +7,8 @@ import java.util.Arrays;
 public class Quicksort {
 
     public static void main(String[] args) {
-        Path archivoEntrada = Paths.get("input.txt");
-        Path archivoSalida = Paths.get("output.txt");
+        Path archivoEntrada = Paths.get("C:/quick/entradaq.txt");
+        Path archivoSalida = Paths.get("C:/quick/salidaq.txt");
 
         
         try {
@@ -63,7 +63,11 @@ public class Quicksort {
             // Maneja el caso de archivo vacío
             return new int[0];
         } 
-        String[] partes = str.split(",");
+        String[] partes = str.split("\\s+");
+        if (str.isEmpty()) {
+            return new int[0];
+        }    
+        
         int[] numeros = new int[partes.length];
         for (int i = 0; i < partes.length; i++) {
             String parteLimpia = partes[i].trim();
